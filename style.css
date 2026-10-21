@@ -1,0 +1,336 @@
+:root {
+    --ink:#553b43;
+    --rose:#b96c7d;
+    --cream:#fff9f6;
+    --pink:#f5e5e6
+}
+* {
+    box-sizing:border-box
+}
+html {
+    scroll-behavior:smooth
+}
+body {
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'DM Sans',sans-serif
+}
+nav {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:10;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 7%;
+    background:#fff9f6db;
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid #e9d9d8
+}
+nav .brand {
+    font-family:'Great Vibes',cursive;
+    font-size:30px;
+    color:var(--rose)
+}
+nav a {
+    color:var(--ink);
+    text-decoration:none;
+    font-size:12px;
+    letter-spacing:1.5px;
+    margin-left:22px
+}
+section {
+    padding:110px 7%;
+    text-align:center
+}
+.hero {
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+    background:radial-gradient(ellipse at 50% 45%,#f6dfe3 0%,#fff7f4 62%,#fffaf7 100%)
+}
+.eyebrow {
+    letter-spacing:4px;
+    text-transform:uppercase;
+    font-size:11px;
+    color:#b47985;
+    font-weight:600
+}
+.hero h1 {
+    font:normal clamp(72px,13vw,180px)/.95 'Great Vibes',cursive;
+    color:#a85d72;
+    margin:30px 0 12px
+}
+.hero h2 {
+    font:italic clamp(24px,4vw,48px) 'Playfair Display',serif;
+    font-weight:400;
+    margin:10px 0 20px
+}
+.hero p {
+    max-width:530px;
+    line-height:1.9;
+    color:#876e74
+}
+.btn {
+    border:1px solid #b86b7e;
+    border-radius:100px;
+    padding:15px 30px;
+    background:#b86b7e;
+    color:white;
+    cursor:pointer;
+    font:500 12px 'DM Sans';
+    letter-spacing:1px;
+    transition:.3s;
+    display:inline-block;
+    text-decoration:none
+}
+.btn:hover {
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px #b86b7e44
+}
+.btn.secondary {
+    background:transparent;
+    color:#b86b7e
+}
+.ornament {
+    font-size:32px;
+    color:#c88a98;
+    margin:15px
+}
+.section-title {
+    font:italic 44px 'Playfair Display',serif;
+    margin:16px 0
+}
+.sub {
+    max-width:590px;
+    margin:0 auto 42px;
+    line-height:1.9;
+    color:#8c7478
+}
+.gallery {
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    max-width:1050px;
+    margin:auto
+}
+.photo {
+    height:clamp(280px,33vw,370px);
+    min-width:0;
+    border-radius:160px 160px 14px 14px;
+    overflow:hidden;
+    background:#efd7da;
+    position:relative
+}
+.photo:nth-child(2) {
+    margin-top:25px
+}
+.photo img,.video-card video {
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block
+}
+.photo img {
+    object-position:center 35%
+}
+.photo:nth-child(3) img {
+    object-position:center 20%
+}
+.placeholder {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+    padding:25px;
+    color:#aa7e89;
+    font:italic 24px 'Playfair Display',serif
+}
+.photo img:not([src]),video:not([src]) {
+    display:none
+}
+.photo img+.placeholder,.video-card video+.placeholder {
+    display:none
+}
+.photo img[style*="display: none"]+.placeholder,.video-card video[style*="display: none"]+.placeholder {
+    display:flex
+}
+
+/* =================================
+   VIDEO SECTION - PORTRAIT FORMAT
+   ================================= */
+
+.video-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Video frame */
+.video-card {
+    width: 100%;
+    max-width: 380px;
+    aspect-ratio: 9 / 16;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #eedbde;
+    box-shadow: 0 15px 40px rgba(185, 108, 125, 0.15);
+}
+
+/* Actual video */
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 700px) {
+    .video-grid {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .video-card {
+        width: 100%;
+        max-width: 320px;
+        aspect-ratio: 9 / 16;
+        border-radius: 16px;
+    }
+}
+
+.music {
+    background:#f6e9e9
+}
+.player {
+    max-width:550px;
+    margin:auto;
+    padding:30px;
+    background:#fff9f6;
+    border:1px solid #e9d1d7;
+    border-radius:24px;
+    box-shadow:0 20px 60px #9b6e781a
+}
+.disc {
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:radial-gradient(circle,#fff8f7 0 12%,#c68a9a 13% 16%,#a75f73 17% 100%);
+    margin:0 auto 24px;
+    box-shadow:0 10px 30px #b56f8044;
+    animation:spin 9s linear infinite;
+    animation-play-state:paused
+}
+.disc.playing {
+    animation-play-state:running
+}
+@keyframes spin {
+    to {
+        transform:rotate(360deg)
+    }
+}
+.songname {
+    font:italic 25px 'Playfair Display',serif
+}
+.letter {
+    max-width:760px;
+    margin:auto;
+    background:#fff;
+    padding:55px 8%;
+    box-shadow:0 20px 70px #b783881c;
+    border:1px solid #f1e4e1;
+    text-align:left;
+    border-radius:6px;
+    transform:rotate(-.5deg)
+}
+.letter p {
+    line-height:2.1;
+    font-size:16px;
+    color:#725a62
+}
+.signature {
+    font:38px 'Great Vibes',cursive;
+    color:#b66e80;
+    text-align:right
+}
+.final {
+    background:linear-gradient(145deg,#edd0d7,#fdf1eb);
+    min-height:650px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center
+}
+.final h2 {
+    font:normal clamp(65px,10vw,120px) 'Great Vibes',cursive;
+    color:#a65e71;
+    margin:15px
+}
+.reveal {
+    display:none;
+    max-width:620px;
+    font:italic 24px/1.8 'Playfair Display',serif;
+    margin:25px auto
+}
+.heart {
+    position:fixed;
+    pointer-events:none;
+    z-index:100;
+    animation:float 3s ease-out forwards;
+    color:#b96c7d
+}
+@keyframes float {
+    to {
+        transform:translateY(-260px) rotate(25deg);
+        opacity:0
+    }
+}
+footer {
+    text-align:center;
+    padding:32px;
+    color:#ac8790;
+    font-size:12px;
+    letter-spacing:2px
+}
+@media(max-width:700px) {
+    nav {
+        padding:15px 5%
+    }
+    nav a {
+        margin-left:9px;
+        font-size:10px
+    }
+    section {
+        padding:80px 6%
+    }
+    .gallery {
+        gap:10px;
+        grid-template-columns:repeat(3,minmax(0,1fr))
+    }
+    .photo {
+        height:clamp(175px,48vw,260px)
+    }
+    .photo:nth-child(2) {
+        margin-top:15px
+    }
+    .video-grid {
+        grid-template-columns:1fr
+    }
+    .letter {
+        padding:35px 8%
+    }
+    .section-title {
+        font-size:34px
+    }
+}
